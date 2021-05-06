@@ -23,6 +23,7 @@ public class UI {
     public void start() {
         System.out.println("Welcome to GrantsEpicPasswordGenerator™, press enter to begin.");
         in.nextLine();
+        System.out.println("\n\n\n");
 
         setOptions();
     }
