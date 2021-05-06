@@ -3,19 +3,22 @@ package src;
 import java.util.Scanner;
 
 public class UI {
-    String password;
+    Password password;
     Scanner in = new Scanner(System.in);
 
 
     public UI() {
-        password = "";
+        password = new Password();
     }
 
     public void start() {
-        
+        boolean isDone = false;
+        while (!isDone) {
+            
+        }
     }
 
-    public String generate(int length) {
-        return "";
+    private String[] getOptions() {
+        return;
     }
 }
