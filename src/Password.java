@@ -34,6 +34,16 @@ public class Password {
             return;
         }
 
+        String chars2use = CHAR_LOWERCASE;
+        if (hasCaps) {
+            chars2use += CHAR_UPPERCASE;
+        }
+        if (hasSymbols) {
+            chars2use += SYMOBOLS;
+        }
+        if (hasNums) {
+            chars2use += DIGIT;
+        }
     }
 
     public String get() {
@@ -95,7 +105,7 @@ public class Password {
             try {
                 length = Integer.parseInt(temp);
                 if (length <= 0 || length > 48) {
-                    System.out.println("Passwords must be 1 or more digits and under 48 digits long.");
+                    System.out.println("Passwords must be 1 or more chars and under 48 chars long.");
                     continue;
                 }
                 isDone = true;
