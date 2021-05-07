@@ -45,6 +45,9 @@ public class Password {
         }
 
         chars2use = shuffleString(chars2use);
+        while (chars2use.length() < length) {
+            chars2use += shuffleString(chars2use);
+        }
 
         password = chars2use.substring(0, length);
     }
