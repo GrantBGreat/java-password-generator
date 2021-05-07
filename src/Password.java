@@ -15,6 +15,9 @@ public class Password {
     private static final String DIGIT = "0123456789";
     private static final String SYMOBOLS = "!@#&()–[{}]:;',?/*~$^+=<>";
 
+    /**
+     * Constructs a Password object with base properties such as length, hasCaps, and hasNums
+     */
     public Password() {
         password = "ERROR: PASSWORD NOT SET";
 
@@ -26,8 +29,10 @@ public class Password {
         hasNums = false;
     }
 
+    /**
+     * Generates/regenerates the password based off of the options set in the setOptions() method.
+     */
     public void generate() {
-        // generate the password based off the users gived options.
         if (length == 0) {
             System.out.println("ERROR: Password generation settings not yet made.");
             return;
@@ -54,10 +59,16 @@ public class Password {
         password = passwordBuild;
     }
 
+    /**
+     * Get the password in the form of a readable string.
+     */
     public String get() {
         return password;
     }
 
+    /**
+     * Prompt the user for the options hasCaps, hasSymbols, hasNums, and password length. This must be used before you get or generate the password.
+     */
     public void setOptions() {
         boolean isDone = false;
         String temp = "";

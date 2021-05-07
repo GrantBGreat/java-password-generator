@@ -4,11 +4,16 @@ public class UI {
     Password password;
     Scanner in = new Scanner(System.in);
 
-
+    /**
+     * The User Interface located in the console that manages the password generator that the user sees.
+     */
     public UI() {
         password = new Password();
     }
 
+    /**
+     * Start the program. This method is what deals with an controls all the others.
+     */
     public void start() {
         clearScreen();
         System.out.println("Welcome to GrantsEpicPasswordGenerator™, press enter to begin.");
@@ -60,6 +65,9 @@ public class UI {
         }        
     }
 
+    /**
+     * The method to print a generated password to the console for the user to see.
+     */
     private void passwordOut(String password) {
         System.out.println("\n\nHere is your password:");
         System.out.println("-------------------------------");
@@ -74,6 +82,9 @@ public class UI {
         return in.nextLine();
     }
 
+    /**
+     * Clear the console.
+     */
     private static void clearScreen() {  
         System.out.print("\033[H\033[2J");  
         System.out.flush();  
