@@ -44,12 +44,14 @@ public class Password {
             chars2use += DIGIT;
         }
 
-        chars2use = shuffleString(chars2use);
-        while (chars2use.length() < length) {
-            chars2use += shuffleString(chars2use);
+        char[] charArray = chars2use.toCharArray();
+        String passwordBuild = "";
+
+        for (int i = 0; i < length; i++) {
+            passwordBuild += charArray[(int)(Math.random() * charArray.length)];
         }
 
-        password = chars2use.substring(0, length);
+        password = passwordBuild;
     }
 
     public String get() {
@@ -107,7 +109,7 @@ public class Password {
 
         isDone = false;
         while (!isDone) {
-            temp = getInput("How long would you like your password?");
+            temp = getInput("How long would you like your password to be?");
             try {
                 length = Integer.parseInt(temp);
                 if (length <= 0 || length > 48) {
@@ -119,18 +121,6 @@ public class Password {
                 System.out.println("Please enter a valid Int number.");
             }
         }
-    }
-
-    private String shuffleString(String string) {
-        List<String> letters = Arrays.asList(string.split(""));
-        Collections.shuffle(letters);
-
-        StringBuilder builder = new StringBuilder();
-        for (String letter : letters) {
-            builder.append(letter);
-        }
-
-        return builder.toString();
     }
 
     private String getInput(String inputMessage) {
