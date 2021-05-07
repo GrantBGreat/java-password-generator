@@ -20,7 +20,17 @@ public class UI {
         // generate the password.
         password.generate();
 
-        // get the password to display it to the user.
-        password.get();
+        // get the password and display it to the user.
+        passwordOut(password.get());
+        boolean cont = true;
+        while (cont) {
+            
+        }        
+    }
+
+    private void passwordOut(String password) {
+        System.out.println("\n\nHere is your password:");
+        System.out.println("-------------------------------");
+        System.out.println("> " + password);
     }
 }
