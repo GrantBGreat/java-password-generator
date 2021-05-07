@@ -1,6 +1,7 @@
 package src;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Password {
     String password;
@@ -10,6 +11,12 @@ public class Password {
     boolean hasSymbols;
     boolean hasCaps;
     boolean hasNums;
+
+    // stuff for generation:
+    private static final String CHAR_LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
+    private static final String CHAR_UPPERCASE = CHAR_LOWERCASE.toUpperCase();
+    private static final String DIGIT = "0123456789";
+    private static final String SYMOBOLS = "!@#&()–[{}]:;',?/*~$^+=<>";
 
     public Password() {
         password = "ERROR: PASSWORD NOT SET";
@@ -29,7 +36,6 @@ public class Password {
             return;
         }
 
-        
     }
 
     public String get() {
