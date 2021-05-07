@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Password {
     String password;
@@ -44,6 +43,10 @@ public class Password {
         if (hasNums) {
             chars2use += DIGIT;
         }
+
+        chars2use = shuffleString(chars2use);
+
+        password = chars2use.substring(0, length+1);
     }
 
     public String get() {
@@ -113,6 +116,18 @@ public class Password {
                 System.out.println("Please enter a valid Int number.");
             }
         }
+    }
+
+    private String shuffleString(String string) {
+        List<String> letters = Arrays.asList(string.split(""));
+        Collections.shuffle(letters);
+
+        StringBuilder builder = new StringBuilder();
+        for (String letter : letters) {
+            builder.append(letter);
+        }
+
+        return builder.toString();
     }
 
     private String getInput(String inputMessage) {
