@@ -46,7 +46,7 @@ public class Password {
 
         chars2use = shuffleString(chars2use);
 
-        password = chars2use.substring(0, length+1);
+        password = chars2use.substring(0, length);
     }
 
     public String get() {
