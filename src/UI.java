@@ -13,7 +13,7 @@ public class UI {
         clearScreen();
         System.out.println("Welcome to GrantsEpicPasswordGenerator™, press enter to begin.");
         in.nextLine();
-        System.out.println("\n\n\n");
+        clearScreen();
 
         // set the users options for the password before it is created.
         password.setOptions();
